@@ -1,0 +1,35 @@
+{
+  "name": "three.js",
+  "version": "1.0.0",
+  "description": "Three.js Project",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "rollup -c --environment BUILD:build",
+    "dev": "npx rollup -c -w --environment BUILD:public"
+  },
+  "author": "SEFA UN",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "sass": "^1.61.0",
+    "three": "^0.151.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-replace": "^5.0.2",
+    "@rollup/plugin-typescript": "^11.1.0",
+    "@types/three": "^0.150.2",
+    "babel-loader": "^9.1.2",
+    "rollup": "^3.20.2",
+    "rollup-plugin-livereload": "^2.0.5",
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "rollup-plugin-sass": "^1.12.19",
+    "rollup-plugin-serve": "^2.0.2",
+    "tslib": "^2.5.0"
+  }
+}

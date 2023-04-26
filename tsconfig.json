@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "module": "ES2015",
+    "esModuleInterop": true,
+    "target": "ES5",
+    "sourceMap": true,
+    "outDir": "dist",
+    "declaration": false,
+    "moduleResolution": "bundler"
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "**/*"
+  ],
+  "lib": [
+    "ES2020"
+  ]
+}
