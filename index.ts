@@ -103,8 +103,32 @@ function moveCamera() {
 document.body.onscroll = moveCamera
 moveCamera()
 
-// Animation Loop
+// Tıklama olayı ekleme
+const raycaster = new THREE.Raycaster()
+const mouse = new THREE.Vector2()
 
+function onMouseClick(event) {
+  // fare pozisyonunu normalleştirme (-1 to +1)
+  mouse.x = (event.clientX / window.innerWidth) * 2 - 1
+  mouse.y = - (event.clientY / window.innerHeight) * 2 + 1
+
+  // ışın yönünü ve nesne dizisini ayarlama
+  raycaster.setFromCamera(mouse, camera)
+  const intersects = raycaster.intersectObjects(scene.children)
+
+  // Kutuya tıklandığını kontrol etme
+  if (intersects.length > 0) {
+    if (intersects[0].object === jeff) {
+      // Kutuya tıklandı!
+      // yapılacak işlemleri burada belirleyebilirsiniz
+      jeff.material.color.set(Math.random() * 0xffffff)
+    }
+  }
+}
+
+window.addEventListener('click', onMouseClick, false)
+
+// Animation Loop
 function animate() {
   requestAnimationFrame(animate)
 
